@@ -20,6 +20,11 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="stylesheets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <meta
       property="og:title"
       content="Учебный проект 'Интерактивный плакат REFRAX'"
@@ -31,5 +36,602 @@
     />
     <script src="scripts.js"></script>
   </head>
-  <body></body>
+  <body>
+    <section class="first-screen">
+      <div class="first-screen-top-bar">
+        <p class="first-screen-top-bar-path">
+          c/refrax/dirtyarchive/index.html
+        </p>
+        <button
+          class="first-screen-top-bar-close"
+          type="button"
+          aria-label="Закрыть окно"
+        >
+          <img src="images/closer-button.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="first-screen-content">
+        <img
+          class="first-screen-background-folder"
+          src="images/big-purple-folder.svg"
+          alt=""
+        />
+
+        <div class="first-screen-folders">
+          <div class="folder folder-villian-one">
+            <img src="images/folder-villian-one.png" alt="Фиолетовая папка" />
+          </div>
+
+          <div class="folder folder-villian-two">
+            <img src="images/folder-villian-two.png" alt="Розовая папка" />
+          </div>
+
+          <div class="folder folder-villian-three">
+            <img src="images/folder-villian-three.png" alt="Голубая папка" />
+          </div>
+
+          <div class="folder folder-villian-four">
+            <img src="images/folder-villian-four.png" alt="Желтая папка" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="running-line-first">
+      <div class="running-line-first-content">
+        <p class="running-line-first-text">
+          У нас есть все: документы, личные дела и многое другое
+        </p>
+        <img class="hedgehog-running" src="images/hedgehog-running-line.svg" />
+        <p class="running-line-first-text">
+          У нас есть все: документы, личные дела и многое другое
+        </p>
+        <img class="hedgehog-running" src="images/hedgehog-running-line.svg" />
+        <p class="running-line-first-text">
+          У нас есть все: документы, личные дела и многое другое
+        </p>
+        <img class="hedgehog-running" src="images/hedgehog-running-line.svg" />
+      </div>
+    </section>
+
+    <section class="second-screen">
+      <div class="second-screen-container">
+        <div class="second-screen-main-window">
+          <div class="second-screen-popups">
+            <div class="second-screen-popup second-screen-popup-one">
+              <img src="images/background-window-one.svg" alt="" />
+              <div class="second-screen-popup-content">
+                <p>Это большая ошибка!</p>
+                <span>Закрыть</span>
+              </div>
+            </div>
+
+            <div class="second-screen-popup second-screen-popup-two">
+              <img src="images/background-window-two.svg" alt="" />
+              <div class="second-screen-popup-content">
+                <p>Перестань разрушать все</p>
+                <span>Закрыть</span>
+              </div>
+            </div>
+
+            <div class="second-screen-popup second-screen-popup-three">
+              <img src="images/background-window-three.svg" alt="" />
+              <div class="second-screen-popup-content">
+                <p>Не нужно так поступать</p>
+                <span>Закрыть</span>
+              </div>
+            </div>
+
+            <div class="second-screen-popup second-screen-popup-four">
+              <img src="images/background-window-four.svg" alt="" />
+              <div class="second-screen-popup-content">
+                <p>Нельзя так много злиться</p>
+                <span>Закрыть</span>
+              </div>
+            </div>
+
+            <div class="second-screen-popup second-screen-popup-five">
+              <img src="images/background-window-five.svg" alt="" />
+              <div class="second-screen-popup-content">
+                <p>Одумайся!</p>
+                <span>Закрыть</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="second-screen-text">
+            ПРИВЕТ! ☻ это игровой клуб refrax самое время внести свой //+&>;
+            большой и хитрый вклад в нашей злодейской истории клуба
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cards">
+      <div class="cards-container">
+        <img
+          class="cards-section-background"
+          src="images/cards-section-background.svg"
+          alt=""
+        />
+
+        <div class="cards-content">
+          <div class="cards-window-label">
+            <p>Карты</p>
+          </div>
+
+          <div class="cards-popup">
+            <img src="images/background-window-three.svg" alt="" />
+            <div class="cards-popup-content">
+              <p>Нельзя так много злиться</p>
+              <span>Закрыть</span>
+            </div>
+          </div>
+
+          <h2 class="cards-title">Найди вторую половину злодея</h2>
+
+          <div class="cards-grid">
+            <button class="card" type="button" data-character="rabbit">
+              <span class="card__inner">
+                <img
+                  class="card__face card__face--front"
+                  src="images/card-rabbit.svg"
+                  alt="Кролик"
+                />
+                <img
+                  class="card__face card__face--back"
+                  src="images/cards-back.svg"
+                  alt=""
+                />
+              </span>
+            </button>
+
+            <button class="card" type="button" data-character="hedgehog">
+              <span class="card__inner">
+                <img
+                  class="card__face card__face--front"
+                  src="images/card-hedgehog.svg"
+                  alt="Ёж"
+                />
+                <img
+                  class="card__face card__face--back"
+                  src="images/cards-back.svg"
+                  alt=""
+                />
+              </span>
+            </button>
+
+            <button class="card" type="button" data-character="rabbit">
+              <span class="card__inner">
+                <img
+                  class="card__face card__face--front"
+                  src="images/card-rabbit.svg"
+                  alt="Кролик"
+                />
+                <img
+                  class="card__face card__face--back"
+                  src="images/cards-back.svg"
+                  alt=""
+                />
+              </span>
+            </button>
+
+            <button class="card" type="button" data-character="goat">
+              <span class="card__inner">
+                <img
+                  class="card__face card__face--front"
+                  src="images/card-goat.svg"
+                  alt="Козел"
+                />
+                <img
+                  class="card__face card__face--back"
+                  src="images/cards-back.svg"
+                  alt=""
+                />
+              </span>
+            </button>
+
+            <button class="card" type="button" data-character="ram">
+              <span class="card__inner">
+                <img
+                  class="card__face card__face--front"
+                  src="images/card-ram.svg"
+                  alt="Баран"
+                />
+                <img
+                  class="card__face card__face--back"
+                  src="images/cards-back.svg"
+                  alt=""
+                />
+              </span>
+            </button>
+
+            <button class="card" type="button" data-character="goat">
+              <span class="card__inner">
+                <img
+                  class="card__face card__face--front"
+                  src="images/card-goat.svg"
+                  alt="Козел"
+                />
+                <img
+                  class="card__face card__face--back"
+                  src="images/cards-back.svg"
+                  alt=""
+                />
+              </span>
+            </button>
+
+            <button class="card" type="button" data-character="hedgehog">
+              <span class="card__inner">
+                <img
+                  class="card__face card__face--front"
+                  src="images/card-hedgehog.svg"
+                  alt="Ёж"
+                />
+                <img
+                  class="card__face card__face--back"
+                  src="images/cards-back.svg"
+                  alt=""
+                />
+              </span>
+            </button>
+
+            <button class="card" type="button" data-character="ram">
+              <span class="card__inner">
+                <img
+                  class="card__face card__face--front"
+                  src="images/card-ram.svg"
+                  alt="Баран"
+                />
+                <img
+                  class="card__face card__face--back"
+                  src="images/cards-back.svg"
+                  alt=""
+                />
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="puzzle">
+      <div class="puzzle-container">
+        <img
+          class="puzzle-section-background"
+          src="images/puzzle-section-background.svg"
+          alt=""
+        />
+
+        <div class="puzzle-content">
+          <div class="puzzle-window-label">
+            <p>События</p>
+          </div>
+
+          <div class="puzzle-popup">
+            <img src="images/background-window-four.svg" alt="" />
+            <div class="puzzle-popup-content">
+              <p>Нельзя так много злиться</p>
+              <span>Закрыть</span>
+            </div>
+          </div>
+
+          <h2 class="puzzle-title">СОБЕРИ ВСЮ КАРТИНУ СОБЫТИЙ</h2>
+
+          <div class="puzzle-layout">
+            <div class="puzzle-left-column">
+              <img
+                class="puzzle-image vr-left"
+                src="images/vr-left.svg"
+                alt=""
+              />
+              <img
+                class="puzzle-image vrpad-left"
+                src="images/vrpad-left.svg"
+                alt=""
+              />
+              <img
+                class="puzzle-image gamepad-left"
+                src="images/gamepad-left.svg"
+                alt=""
+              />
+            </div>
+
+            <div class="puzzle-center">
+              <img
+                class="puzzle-substrate"
+                src="images/puzzle-substrate.svg"
+                alt="Основа пазла"
+              />
+            </div>
+
+            <div class="puzzle-right-column">
+              <img
+                class="puzzle-image vrpad-right"
+                src="images/vrpad-right.svg"
+                alt=""
+              />
+              <img
+                class="puzzle-image gamepad-right"
+                src="images/gamepad-right.svg"
+                alt=""
+              />
+              <img
+                class="puzzle-image vr-right"
+                src="images/vr-right.svg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cassettes">
+      <div class="cassettes-container">
+        <img
+          class="cassettes-section-background"
+          src="images/cassettes-section-background.svg"
+          alt=""
+        />
+
+        <div class="cassettes-content">
+          <div class="cassettes-popups">
+            <div class="cassettes-popup cassettes-popup-three">
+              <img src="images/background-window-three.svg" alt="" />
+              <div class="cassettes-popup-content">
+                <p>Не нужно так поступать</p>
+                <span>Закрыть</span>
+              </div>
+            </div>
+
+            <div class="cassettes-popup cassettes-popup-four">
+              <img src="images/background-window-four.svg" alt="" />
+              <div class="cassettes-popup-content">
+                <p>Одумайся!</p>
+                <span>Закрыть</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cassettes-layout">
+            <div class="cassettes-slider-block">
+              <div class="swiper cassettes-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <button
+                      class="cassette-button"
+                      type="button"
+                      data-id="1"
+                      data-title="Пение урсулы"
+                      data-text="Песня о сделке, в которой свобода обменивается на иллюзию мечты. Урсула превращает желание быть услышанной в инструмент контроля."
+                      data-audio="audio/cassette-one.mp3"
+                      data-background="images/music-back-one.svg"
+                      aria-label="Включить кассету Пение урсулы"
+                    >
+                      <img
+                        src="images/cassettes-one.svg"
+                        alt="Кассета Пение урсулы"
+                      />
+                    </button>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <button
+                      class="cassette-button"
+                      type="button"
+                      data-id="2"
+                      data-title="Матушка готель"
+                      data-text="Голос заботы звучит как система ограничения. Под видом любви Готель внушает страх перед миром."
+                      data-audio="audio/cassette-two.mp3"
+                      data-background="images/music-back-two.svg"
+                      aria-label="Включить кассету Матушка готель"
+                    >
+                      <img
+                        src="images/cassettes-two.svg"
+                        alt="Кассета Матушка готель"
+                      />
+                    </button>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <button
+                      class="cassette-button"
+                      type="button"
+                      data-id="3"
+                      data-title="Гастон и чудовище"
+                      data-text="Самовлюблённый гимн силе и одобрению толпы. Песня превращает эго в спектакль, где уверенность звучит громче, чем правда."
+                      data-audio="audio/cassette-three.mp3"
+                      data-background="images/music-back-three.svg"
+                      aria-label="Включить кассету Гастон и чудовище"
+                    >
+                      <img
+                        src="images/cassettes-three.svg"
+                        alt="Кассета Гастон и чудовище"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cassettes-navigation">
+                <button
+                  class="cassettes-arrow cassettes-arrow-prev"
+                  type="button"
+                  aria-label="Предыдущая кассета"
+                >
+                  <img src="images/arrow-left.svg" alt="" />
+                </button>
+
+                <button
+                  class="cassettes-arrow cassettes-arrow-next"
+                  type="button"
+                  aria-label="Следующая кассета"
+                >
+                  <img src="images/arrow-right.svg" alt="" />
+                </button>
+              </div>
+            </div>
+
+            <aside class="cassette-info-block" aria-live="polite">
+              <img
+                class="cassette-info-background"
+                src="images/music-back-one.svg"
+                alt=""
+              />
+
+              <div class="cassette-info-content">
+                <h3 class="cassette-info-title">Пение урсулы</h3>
+                <p class="cassette-info-text">
+                  Песня о сделке, в которой свобода обменивается на иллюзию
+                  мечты. Урсула превращает желание быть услышанной в инструмент
+                  контроля.
+                </p>
+                <button class="cassette-info-button" type="button">
+                  ВЫБРАТЬ
+                </button>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="draw">
+      <div class="draw-container">
+        <img
+          class="draw-section-background"
+          src="images/draw-section-background.svg"
+          alt=""
+        />
+
+        <div class="draw-content">
+          <div class="draw-popup">
+            <img src="images/background-window-five.svg" alt="" />
+            <div class="draw-popup-content">
+              <p>Одумайся!</p>
+              <span>Закрыть</span>
+            </div>
+          </div>
+
+          <h2 class="draw-title">Не забудь оставить автограф</h2>
+
+          <div class="draw-board">
+            <img
+              class="draw-board-background"
+              src="images/canva-background.png"
+              alt=""
+            />
+
+            <div class="draw-board-content">
+              <canvas
+                class="draw-canvas"
+                id="drawCanvas"
+                width="1000"
+                height="600"
+                aria-label="Поле для рисования"
+              ></canvas>
+
+              <div class="palette" aria-label="Палитра цветов">
+                <button
+                  class="palette__color palette__color--one"
+                  type="button"
+                  data-color="#ffffff"
+                  aria-label="Белый"
+                ></button>
+                <button
+                  class="palette__color palette__color--two"
+                  type="button"
+                  data-color="#a855f7"
+                  aria-label="Фиолетовый"
+                ></button>
+                <button
+                  class="palette__color palette__color--three"
+                  type="button"
+                  data-color="#ec4899"
+                  aria-label="Розовый"
+                ></button>
+                <button
+                  class="palette__color palette__color--four"
+                  type="button"
+                  data-color="#60a5fa"
+                  aria-label="Голубой"
+                ></button>
+                <button
+                  class="palette__color palette__color--five"
+                  type="button"
+                  data-color="#facc15"
+                  aria-label="Желтый"
+                ></button>
+                <button
+                  class="palette__color palette__color--six"
+                  type="button"
+                  data-color="#1f1f1f"
+                  aria-label="Черный"
+                ></button>
+                <button
+                  class="palette__color palette__color--seven"
+                  type="button"
+                  data-color="#f97316"
+                  aria-label="Оранжевый"
+                ></button>
+                <button
+                  class="palette__color palette__color--eight"
+                  type="button"
+                  data-color="#22c55e"
+                  aria-label="Зеленый"
+                ></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <img
+          class="footer-main-folder"
+          src="images/main-folder-footer.svg"
+          alt=""
+        />
+
+        <div class="footer-content">
+          <div class="footer-top-folders">
+            <img
+              class="footer-folder footer-folder-one"
+              src="images/folder-footer-one.svg"
+              alt=""
+            />
+            <img
+              class="footer-folder footer-folder-two"
+              src="images/folder-footer-two.svg"
+              alt=""
+            />
+          </div>
+
+          <div class="footer-info-folders">
+            <div class="footer-info-folder footer-info-folder-author">
+              <img src="images/folder-footer-autor.svg" alt="Автор проекта" />
+            </div>
+
+            <div class="footer-info-folder footer-info-folder-education">
+              <img
+                src="images/folder-footer-education.svg"
+                alt="Образовательная программа"
+              />
+            </div>
+
+            <div class="footer-info-folder footer-info-folder-teachers">
+              <img
+                src="images/folder-footer-teachers.svg"
+                alt="Преподаватели"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
