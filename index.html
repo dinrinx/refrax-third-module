@@ -19,7 +19,7 @@
       type="font/ttf"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="stylesheet" href="stylesheet/style.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
@@ -34,49 +34,61 @@
       property="og:description"
       content="Итоговый проект 3-го модуля по разработке интерактивного веб-плаката"
     />
-    <script src="scripts.js"></script>
+    <script src="js/second-screen.js" defer></script>
+    <script src="js/cards.js" defer></script>
   </head>
   <body>
-    <section class="first-screen">
-      <div class="first-screen-top-bar">
-        <p class="first-screen-top-bar-path">
-          c/refrax/dirtyarchive/index.html
-        </p>
-        <button
-          class="first-screen-top-bar-close"
-          type="button"
-          aria-label="Закрыть окно"
-        >
-          <img src="images/closer-button.svg" alt="" />
-        </button>
-      </div>
+    <div class="page">
+      <section class="first-screen">
+        <div class="first-screen-top-bar">
+          <p class="first-screen-top-bar-path">
+            c/refrax/dirtyarchive/index.html
+          </p>
 
-      <div class="first-screen-content">
-        <img
-          class="first-screen-background-folder"
-          src="images/big-purple-folder.svg"
-          alt=""
-        />
+          <button
+            class="first-screen-top-bar-close"
+            type="button"
+            aria-label="Закрыть окно"
+          >
+            <img src="images/closer-button.svg" alt="" />
+          </button>
+        </div>
 
-        <div class="first-screen-folders">
-          <div class="folder folder-villian-one">
-            <img src="images/folder-villian-one.png" alt="Фиолетовая папка" />
-          </div>
+        <div class="first-screen-content">
+          <img
+            class="first-screen-background-folder"
+            src="images/big-purple-folder.svg"
+            alt=""
+          />
 
-          <div class="folder folder-villian-two">
-            <img src="images/folder-villian-two.png" alt="Розовая папка" />
-          </div>
+          <div class="first-screen-folders">
+            <div class="folder folder-villian-one">
+              <img src="images/folder-villian-one.svg" alt="Фиолетовая папка" />
+            </div>
 
-          <div class="folder folder-villian-three">
-            <img src="images/folder-villian-three.png" alt="Голубая папка" />
-          </div>
+            <div class="folder folder-villian-two">
+              <img src="images/folder-villian-one.svg" alt="Фиолетовая папка" />
+            </div>
 
-          <div class="folder folder-villian-four">
-            <img src="images/folder-villian-four.png" alt="Желтая папка" />
+            <div class="folder folder-villian-three">
+              <img src="images/folder-villian-two.svg" alt="Розовая папка" />
+            </div>
+
+            <div class="folder folder-villian-four">
+              <img src="images/folder-villian-two.svg" alt="Розовая папка" />
+            </div>
+
+            <div class="folder folder-villian-tive">
+              <img src="images/folder-villian-three.svg" alt="Голубая папка" />
+            </div>
+
+            <div class="folder folder-villian-six">
+              <img src="images/folder-villian-four.svg" alt="Желтая папка" />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <section class="running-line-first">
       <div class="running-line-first-content">
@@ -103,39 +115,39 @@
               <img src="images/background-window-one.svg" alt="" />
               <div class="second-screen-popup-content">
                 <p>Это большая ошибка!</p>
-                <span>Закрыть</span>
+                <span class="second-screen-popup-close">Закрыть</span>
               </div>
             </div>
 
             <div class="second-screen-popup second-screen-popup-two">
               <img src="images/background-window-two.svg" alt="" />
               <div class="second-screen-popup-content">
-                <p>Перестань разрушать все</p>
-                <span>Закрыть</span>
+                <p>Нельзя так много злиться</p>
+                <span class="second-screen-popup-close">Закрыть</span>
               </div>
             </div>
 
             <div class="second-screen-popup second-screen-popup-three">
               <img src="images/background-window-three.svg" alt="" />
               <div class="second-screen-popup-content">
-                <p>Не нужно так поступать</p>
-                <span>Закрыть</span>
+                <p>Перестань разрушать все</p>
+                <span class="second-screen-popup-close">Закрыть</span>
               </div>
             </div>
 
             <div class="second-screen-popup second-screen-popup-four">
               <img src="images/background-window-four.svg" alt="" />
               <div class="second-screen-popup-content">
-                <p>Нельзя так много злиться</p>
-                <span>Закрыть</span>
+                <p>Одумайся!</p>
+                <span class="second-screen-popup-close">Закрыть</span>
               </div>
             </div>
 
             <div class="second-screen-popup second-screen-popup-five">
               <img src="images/background-window-five.svg" alt="" />
               <div class="second-screen-popup-content">
-                <p>Одумайся!</p>
-                <span>Закрыть</span>
+                <p>Не нужно так поступать</p>
+                <span class="second-screen-popup-close">Закрыть</span>
               </div>
             </div>
           </div>
@@ -157,10 +169,6 @@
         />
 
         <div class="cards-content">
-          <div class="cards-window-label">
-            <p>Карты</p>
-          </div>
-
           <div class="cards-popup">
             <img src="images/background-window-three.svg" alt="" />
             <div class="cards-popup-content">
