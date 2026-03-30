@@ -207,12 +207,14 @@
 
   .cards {
     padding-top: 3.125vw;
+    height: 100vw;
   }
 
   .cards-container {
     width: 86vw;
     min-height: 52.0833vw;
     margin: 0 1.5625vw;
+    left: 5%;
   }
 
   .cards-section-background {
@@ -224,15 +226,15 @@
   }
 
   .cards-title {
-    top: 10vw;
-    left: 8vw;
-    width: 40vw;
-    font-size: 4vw;
+    top: 12vw;
+    left: 6vw;
+    width: 46vw;
+    font-size: 5vw;
   }
 
   .cards-popup {
-    top: 4.6875vw;
-    left: 13.5417vw;
+    top: 10vw;
+    left: 32vw;
     width: 15.3646vw;
     height: 12.5vw;
   }
@@ -253,7 +255,7 @@
   }
 
   .cards-grid {
-    top: 22vw;
+    top: 26vw;
     left: 50%;
     width: 76vw;
     grid-template-columns: repeat(4, 15.8854vw);
@@ -264,36 +266,35 @@
   }
 
   .card {
-    width: 15.8854vw;
-    height: 23.9583vw;
+    width: 19vw;
+    height: 25vw;
     top: 0;
   }
 
   .puzzle {
     padding-top: 3.3854vw;
+    height: 100vw;
   }
 
   .puzzle-container {
-    width: 96.875vw;
-    height: 54.6875vw;
-    margin: 0 1.5625vw;
+    height: 60vw;
   }
 
   .puzzle-section-background {
     width: 100%;
-    height: 54.6875vw;
+    height: 85vw;
   }
 
   .puzzle-title {
-    top: 5.7292vw;
-    left: 3.125vw;
-    width: 39.0625vw;
-    font-size: 4.1667vw;
+    top: 12vw;
+    left: 12vw;
+    width: 46vw;
+    font-size: 5vw;
   }
 
   .puzzle-popup {
-    top: 4.6875vw;
-    left: 15.1042vw;
+    top: 10vw;
+    left: 32vw;
     width: 11.4583vw;
     height: 7.5521vw;
   }
@@ -314,52 +315,52 @@
   }
 
   .puzzle-substrate {
-    width: 41.6667vw;
-    height: 46.875vw;
-    left: 29.1667vw;
-    bottom: 4.4271vw;
+    width: 45vw;
+    height: 50vw;
+    left: 26%;
+    bottom: -16vw;
   }
 
   .piece-vr-left {
     width: 17.1875vw;
     height: 14.0625vw;
-    left: 2.3438vw;
-    bottom: 39.0625vw;
+    left: 5vw;
+    bottom: 20vw;
   }
 
   .piece-vrpad-left {
-    width: 8.8542vw;
+    width: 12vw;
     height: 14.0625vw;
-    left: 5.7292vw;
-    bottom: 24.7396vw;
+    left: 7vw;
+    bottom: 2vw;
   }
 
   .piece-gamepad-left {
     width: 15.3646vw;
     height: 13.5417vw;
-    left: 2.3438vw;
-    bottom: 8.8542vw;
+    left: 5vw;
+    bottom: -15vw;
   }
 
   .piece-vrpad-right {
-    width: 12.5vw;
-    height: 15.3646vw;
-    right: 2.6042vw;
-    bottom: 37.2396vw;
+    width: 17vw;
+    height: 20vw;
+    right: 6vw;
+    bottom: 20vw;
   }
 
   .piece-gamepad-right {
-    width: 15.1042vw;
-    height: 12.5vw;
-    right: 2.3438vw;
-    bottom: 23.9583vw;
+    width: 18vw;
+    height: 16vw;
+    right: 7vw;
+    bottom: 2vw;
   }
 
   .piece-vr-right {
     width: 16.4063vw;
     height: 13.5417vw;
-    right: 1.5625vw;
-    bottom: 7.8125vw;
+    right: 7vw;
+    bottom: -15vw;
   }
 
   .drop-vr-left {
@@ -405,13 +406,12 @@
   }
 
   .cassettes {
-    padding-top: 3.6458vw;
+    padding-top: 1vw;
+    height: 100vw;
   }
 
   .cassettes-container {
-    width: 96.875vw;
-    height: 83.3333vw;
-    margin: 0 1.5625vw;
+    width: 92vw;
   }
 
   .cassettes-section-background {
@@ -420,16 +420,16 @@
   }
 
   .cassettes-title {
-    top: 3.125vw;
-    left: 4.1667vw;
+    top: 20vw;
+    left: 8vw;
     width: 42.9688vw;
     font-size: 4.4271vw;
     line-height: 0.95;
   }
 
   .cassettes-popup-three {
-    top: 3.125vw;
-    left: 4.1667vw;
+    top: 25vw;
+    left: 8vw;
     width: 7.5521vw;
     height: 5.0781vw;
   }
@@ -450,8 +450,8 @@
   }
 
   .cassettes-popup-four {
-    top: 3.3854vw;
-    right: 24.7396vw;
+    top: 22vw;
+    left: 30vw;
     width: 7.8125vw;
     height: 5.2083vw;
   }
@@ -471,10 +471,9 @@
     font-size: 0.651vw;
   }
 
-  /* вот тут ключевая перестройка в колонку */
   .cassettes-slider-block {
-    left: 50%;
-    top: 19.0104vw;
+    left: 30%;
+    top: 35vw;
     width: 40.3646vw;
     height: 27.6042vw;
     transform: translateX(-50%);
@@ -503,10 +502,10 @@
   }
 
   .cassette-info-block {
-    top: 50.5208vw;
-    left: 50%;
+    top: 34vw;
+    left: 76%;
     right: auto;
-    width: 38.0208vw;
+    width: 34vw;
     height: 30.7292vw;
     transform: translateX(-50%);
   }
@@ -517,11 +516,11 @@
   }
 
   .cassette-info-content {
-    padding: 2.6042vw 2.3438vw 2.3438vw;
+    padding: 4vw 2.5vw 2.5vw;
   }
 
   .cassette-info-title {
-    margin-bottom: 2.0833vw;
+    margin-bottom: 2vw;
     font-size: 2.8646vw;
   }
 
@@ -533,20 +532,19 @@
 
   .cassette-info-button {
     left: 2.3438vw;
-    bottom: 2.3438vw;
+    bottom: 3vw;
     width: 11.4583vw;
     height: 3.9063vw;
     font-size: 1.9531vw;
   }
 
   .draw {
-    padding-top: 3.9063vw;
+    padding-top: 1vw;
   }
 
   .draw-container {
-    width: 96.875vw;
-    height: 84.6354vw;
-    margin: 0 1.5625vw;
+    width: 100vw;
+    height: 85vw;
   }
 
   .draw-section-background {
@@ -555,15 +553,15 @@
   }
 
   .draw-title {
-    top: 3.9063vw;
-    left: 3.125vw;
+    top: 15vw;
+    left: 12vw;
     width: 46.875vw;
     font-size: 4.4271vw;
   }
 
   .draw-popup {
-    top: 2.8646vw;
-    right: 3.9063vw;
+    top: 12vw;
+    left: 60vw;
     width: 8.8542vw;
     height: 9.8958vw;
   }
@@ -597,9 +595,9 @@
   }
 
   .palette {
-    left: 15.3646vw;
-    bottom: 2.3438vw;
-    gap: 1.0417vw;
+    left: 20vw;
+    bottom: 4vw;
+    gap: 1vw;
   }
 
   .palette__color {
@@ -608,44 +606,42 @@
   }
 
   .footer {
-    padding-top: 4.6875vw;
-    padding-bottom: 2.6042vw;
+    padding-top: 10vw;
   }
 
   .footer-container {
-    width: 96.875vw;
-    height: 27.6042vw;
-    margin: 0 1.5625vw;
+    width: 100%;
+    height: 32vw;
   }
 
   .footer-main-folder {
-    height: 22.9167vw;
+    height: 30vw;
   }
 
   .footer-folder-one {
-    top: 2.0833vw;
+    top: 2vw;
     left: -4.1667vw;
-    width: 32.0313vw;
-    height: 13.8021vw;
+    width: 36vw;
+    height: 16vw;
   }
 
   .footer-folder-two {
-    top: 1.5625vw;
-    right: 8.0729vw;
-    width: 32.0313vw;
+    top: 1.5vw;
+    right: 34vw;
+    width: 45vw;
     height: 13.2813vw;
   }
 
   .footer-info-folder-author,
   .footer-info-folder-teachers,
   .footer-info-folder-education {
-    width: 32.5521vw;
+    width: 45vw;
   }
 
   .footer-info-folder-author {
-    top: 1.3021vw;
+    top: 0.6vw;
     left: 0;
-    height: 14.3229vw;
+    height: 20vw;
   }
 
   .footer-info-folder-author img {
@@ -653,8 +649,8 @@
   }
 
   .footer-info-folder-teachers {
-    top: 2.0833vw;
-    left: 12.7604vw;
+    top: -3vw;
+    left: 18vw;
     height: 14.0625vw;
   }
 
@@ -663,9 +659,9 @@
   }
 
   .footer-info-folder-education {
-    top: 1.0417vw;
-    right: 0;
-    height: 15.1042vw;
+    top: -5vw;
+    right: 15vw;
+    height: 24vw;
   }
 
   .footer-info-folder-education img {
@@ -675,7 +671,7 @@
 
 @media screen and (max-width: 414px) {
   .first-screen {
-    min-height: calc(286 / 896 * 100vh);
+    padding-bottom: 6vw;
   }
 
   .first-screen-top-bar {
@@ -869,33 +865,34 @@
   }
 
   .cards {
-    padding-top: calc(18 / 896 * 100vh);
+    top: 1vw;
+    height: 130vw;
+    bottom: 30vw;
   }
 
   .cards-container {
-    width: calc(100% - calc(20 / 414 * 100vw));
-    min-height: calc(930 / 896 * 100vh);
-    margin: 0 calc(10 / 414 * 100vw);
+    height: 600vw;
   }
 
   .cards-section-background {
     width: 100%;
+    height: 178vw;
   }
 
   .cards-content {
-    min-height: calc(930 / 896 * 100vh);
+    height: calc(930 / 896 * 100vh);
   }
 
   .cards-title {
-    top: calc(30 / 896 * 100vh);
-    left: calc(16 / 414 * 100vw);
-    width: calc(260 / 414 * 100vw);
-    font-size: calc(34 / 414 * 100vw);
+    top: 18vw;
+    left: 7vw;
+    width: 50vw;
+    font-size: 5vw;
   }
 
   .cards-popup {
-    top: calc(22 / 896 * 100vh);
-    left: calc(104 / 414 * 100vw);
+    top: 15vw;
+    left: 37vw;
     width: calc(92 / 414 * 100vw);
     height: calc(72 / 896 * 100vh);
   }
@@ -916,46 +913,45 @@
   }
 
   .cards-grid {
-    top: calc(142 / 896 * 100vh);
-    left: 50%;
+    top: 32vw;
+    left: 55%;
     width: calc(294 / 414 * 100vw);
     grid-template-columns: repeat(2, calc(140 / 414 * 100vw));
-    grid-template-rows: repeat(4, calc(210 / 896 * 100vh));
-    column-gap: calc(14 / 414 * 100vw);
-    row-gap: calc(14 / 896 * 100vh);
+    grid-template-rows: 25vw;
+    column-gap: 2vw;
+    row-gap: 8vw;
   }
 
   .card {
     top: 0;
-    width: calc(140 / 414 * 100vw);
-    height: calc(210 / 896 * 100vh);
+    width: 20vw;
+    height: 36vw;
   }
 
   .puzzle {
-    padding-top: calc(22 / 896 * 100vh);
+    top: 56vw;
   }
 
   .puzzle-container {
     width: calc(100% - calc(20 / 414 * 100vw));
     height: calc(760 / 896 * 100vh);
-    margin: 0 calc(10 / 414 * 100vw);
   }
 
   .puzzle-section-background {
     width: 100%;
-    height: calc(760 / 896 * 100vh);
+    height: 100vw;
   }
 
   .puzzle-title {
-    top: calc(28 / 896 * 100vh);
-    left: calc(16 / 414 * 100vw);
-    width: calc(270 / 414 * 100vw);
-    font-size: calc(32 / 414 * 100vw);
+    top: 17vw;
+    left: 8vw;
+    width: 46vw;
+    font-size: 5vw;
   }
 
   .puzzle-popup {
-    top: calc(22 / 896 * 100vh);
-    left: calc(104 / 414 * 100vw);
+    top: 14vw;
+    left: 32vw;
     width: calc(78 / 414 * 100vw);
     height: calc(50 / 896 * 100vh);
   }
@@ -976,52 +972,52 @@
   }
 
   .puzzle-substrate {
-    width: calc(226 / 414 * 100vw);
-    height: calc(254 / 896 * 100vh);
-    left: calc(84 / 414 * 100vw);
-    bottom: calc(200 / 896 * 100vh);
+    width: 42vw;
+    height: 60vw;
+    left: 25%;
+    top: 29vw;
   }
 
   .piece-vr-left {
-    width: calc(98 / 414 * 100vw);
-    height: calc(80 / 896 * 100vh);
-    left: calc(10 / 414 * 100vw);
-    bottom: calc(484 / 896 * 100vh);
+    width: 14vw;
+    height: 12vw;
+    left: 4vw;
+    top: 32vw;
   }
 
   .piece-vrpad-left {
-    width: calc(48 / 414 * 100vw);
-    height: calc(76 / 896 * 100vh);
-    left: calc(34 / 414 * 100vw);
-    bottom: calc(366 / 896 * 100vh);
+    width: 16vw;
+    height: 14vw;
+    left: 4vw;
+    top: 50vw;
   }
 
   .piece-gamepad-left {
-    width: calc(88 / 414 * 100vw);
-    height: calc(72 / 896 * 100vh);
-    left: calc(12 / 414 * 100vw);
-    bottom: calc(250 / 896 * 100vh);
+    width: 16vw;
+    height: 14vw;
+    left: 4vw;
+    top: 70vw;
   }
 
   .piece-vrpad-right {
-    width: calc(68 / 414 * 100vw);
-    height: calc(88 / 896 * 100vh);
-    right: calc(12 / 414 * 100vw);
-    bottom: calc(476 / 896 * 100vh);
+    width: 20vw;
+    height: 22vw;
+    right: 6vw;
+    top: 32vw;
   }
 
   .piece-gamepad-right {
-    width: calc(86 / 414 * 100vw);
-    height: calc(68 / 896 * 100vh);
-    right: calc(8 / 414 * 100vw);
-    bottom: calc(360 / 896 * 100vh);
+    width: 20vw;
+    height: 22vw;
+    right: 5vw;
+    top: 50vw;
   }
 
   .piece-vr-right {
-    width: calc(94 / 414 * 100vw);
-    height: calc(76 / 896 * 100vh);
-    right: calc(8 / 414 * 100vw);
-    bottom: calc(246 / 896 * 100vh);
+    width: 16vw;
+    height: 14vw;
+    right: 6vw;
+    top: 70vw;
   }
 
   .drop-vr-left {
@@ -1067,7 +1063,7 @@
   }
 
   .cassettes {
-    padding-top: calc(24 / 896 * 100vh);
+    top: 20vw;
   }
 
   .cassettes-container {
@@ -1082,22 +1078,22 @@
   }
 
   .cassettes-title {
-    top: calc(26 / 896 * 100vh);
-    left: calc(16 / 414 * 100vw);
-    width: calc(280 / 414 * 100vw);
-    font-size: calc(32 / 414 * 100vw);
+    top: 60vw;
+    left: 8vw;
+    width: 60vw;
+    font-size: 5vw;
   }
 
   .cassettes-popup-three {
-    top: calc(18 / 896 * 100vh);
-    left: calc(16 / 414 * 100vw);
+    top: 60vw;
+    left: 5vw;
     width: calc(58 / 414 * 100vw);
     height: calc(40 / 896 * 100vh);
   }
 
   .cassettes-popup-three .cassettes-popup-content p {
-    top: calc(8 / 896 * 100vh);
-    left: calc(4 / 414 * 100vw);
+    top: 2vw;
+    left: 1vw;
     width: calc(44 / 414 * 100vw);
     font-size: calc(6 / 414 * 100vw);
   }
@@ -1111,8 +1107,8 @@
   }
 
   .cassettes-popup-four {
-    top: calc(24 / 896 * 100vh);
-    right: calc(122 / 414 * 100vw);
+    top: 60vw;
+    left: 50vw;
     width: calc(60 / 414 * 100vw);
     height: calc(42 / 896 * 100vh);
   }
@@ -1133,15 +1129,15 @@
   }
 
   .cassettes-slider-block {
-    left: 50%;
-    top: calc(150 / 896 * 100vh);
-    width: calc(310 / 414 * 100vw);
+    left: 25%;
+    top: 64vw;
+    width: 30vw;
     height: calc(210 / 896 * 100vh);
     transform: translateX(-50%);
   }
 
   .cassette-button {
-    width: calc(220 / 414 * 100vw);
+    width: 42vw;
   }
 
   .cassettes-arrow {
@@ -1150,18 +1146,18 @@
   }
 
   .cassettes-arrow-prev {
-    left: calc(-4 / 414 * 100vw);
+    left: -7vw;
   }
 
   .cassettes-arrow-next {
-    right: calc(-4 / 414 * 100vw);
+    right: -7vw;
   }
 
   .cassette-info-block {
-    top: calc(400 / 896 * 100vh);
-    left: 50%;
-    width: calc(292 / 414 * 100vw);
-    height: calc(236 / 896 * 100vh);
+    top: 60vw;
+    left: 70%;
+    width: 30vw;
+    height: 30vw;
     transform: translateX(-50%);
   }
 
@@ -1171,36 +1167,34 @@
   }
 
   .cassette-info-content {
-    padding: calc(22 / 896 * 100vh) calc(18 / 414 * 100vw)
-      calc(18 / 896 * 100vh);
+    padding: 20vw 2vw 2vw;
   }
 
   .cassette-info-title {
-    margin-bottom: calc(18 / 896 * 100vh);
-    font-size: calc(22 / 414 * 100vw);
+    margin-bottom: 2vw;
+    font-size: 2vw;
   }
 
   .cassette-info-text {
-    width: calc(230 / 414 * 100vw);
-    font-size: calc(15 / 414 * 100vw);
+    width: 26vw;
+    font-size: 1.5vw;
   }
 
   .cassette-info-button {
-    left: calc(18 / 414 * 100vw);
-    bottom: calc(18 / 896 * 100vh);
-    width: calc(124 / 414 * 100vw);
-    height: calc(40 / 896 * 100vh);
-    font-size: calc(20 / 414 * 100vw);
+    left: 2vw;
+    top: 34vw;
+    width: 10vw;
+    height: 5vw;
+    font-size: 2vw;
   }
 
   .draw {
-    padding-top: calc(28 / 896 * 100vh);
+    top: 12vw;
   }
 
   .draw-container {
     width: calc(100% - calc(20 / 414 * 100vw));
-    height: calc(760 / 896 * 100vh);
-    margin: 0 calc(10 / 414 * 100vw);
+    height: 150vw;
   }
 
   .draw-section-background {
@@ -1209,14 +1203,14 @@
   }
 
   .draw-title {
-    top: calc(28 / 896 * 100vh);
-    left: calc(16 / 414 * 100vw);
+    top: 57vw;
+    left: 10vw;
     width: calc(280 / 414 * 100vw);
-    font-size: calc(32 / 414 * 100vw);
+    font-size: 5vw;
   }
 
   .draw-popup {
-    top: calc(20 / 896 * 100vh);
+    top: 60vw;
     right: calc(18 / 414 * 100vw);
     width: calc(70 / 414 * 100vw);
     height: calc(76 / 896 * 100vh);
@@ -1240,19 +1234,19 @@
   .draw-board {
     width: calc(364 / 414 * 100vw);
     height: calc(292 / 896 * 100vh);
-    bottom: calc(24 / 896 * 100vh);
+    top: 68vw;
   }
 
   .draw-canvas {
-    top: calc(18 / 896 * 100vh);
+    bottom: 10vw;
     left: calc(37 / 414 * 100vw);
-    width: calc(288 / 414 * 100vw);
-    height: calc(178 / 896 * 100vh);
+    width: 40vw;
+    height: 32vw;
   }
 
   .palette {
-    left: calc(68 / 414 * 100vw);
-    bottom: calc(16 / 896 * 100vh);
+    left: 15vw;
+    top: 52vw;
     gap: calc(8 / 414 * 100vw);
   }
 
@@ -1262,8 +1256,7 @@
   }
 
   .footer {
-    padding-top: calc(28 / 896 * 100vh);
-    padding-bottom: calc(20 / 896 * 100vh);
+    top: 10vw;
   }
 
   .footer-container {
