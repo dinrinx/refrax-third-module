@@ -539,6 +539,7 @@ button {
   text-transform: uppercase;
 }
 
+/* сетка карточек */
 .cards-grid {
   position: absolute;
   top: 23.5417vw;
@@ -551,43 +552,960 @@ button {
   z-index: 3;
 }
 
+/* одна карточка */
 .card {
   position: relative;
   width: 18.1944vw;
   height: 27.4306vw;
+  top: 5vw;
   padding: 0;
   border: none;
   background: transparent;
   cursor: pointer;
   perspective: 1000px;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.card__inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.6s ease;
-}
-
-.card.is-flipped .card__inner,
-.card.is-matched .card__inner {
-  transform: rotateY(180deg);
-}
-
-.card__face {
+.card-front,
+.card-back {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   backface-visibility: hidden;
-  object-fit: contain;
+  -webkit-backface-visibility: hidden;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
 }
 
-.card__face--front {
+.card-front {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+/* переворот по клику */
+.card.flipped .card-front,
+.card.matched .card-front {
   transform: rotateY(180deg);
 }
 
-.card__face--back {
+.card.flipped .card-back,
+.card.matched .card-back {
   transform: rotateY(0deg);
+}
+
+/* чтобы найденные пары не выглядели кликабельными */
+.card.matched {
+  cursor: default;
+}
+
+.card-front::before,
+.card-back::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.puzzle {
+  position: relative;
+  width: 100vw;
+  padding-top: 6.7361vw;
+}
+
+.puzzle-container {
+  position: relative;
+  width: 94.4444vw;
+  height: 90.5556vw;
+  margin: 0 2.7778vw;
+}
+
+.puzzle-section-background {
+  position: absolute;
+  inset: 0;
+  width: 94.4444vw;
+  height: 90.5556vw;
+  object-fit: contain;
+  z-index: 0;
+}
+
+.puzzle-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.puzzle-window-label {
+  position: absolute;
+  top: -3.3333vw;
+  left: 4.1667vw;
+  z-index: 5;
+}
+
+.puzzle-window-label p {
+  margin: 0;
+  color: #fbfbfb;
+  font-family: "Coolvetica", Arial, sans-serif;
+  font-size: 2.2222vw;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.puzzle-popup {
+  position: absolute;
+  top: 9.5vw;
+  left: 21vw;
+  width: 12.7778vw;
+  height: 8.2639vw;
+  z-index: 6;
+}
+
+.puzzle-popup img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.puzzle-popup-content {
+  position: absolute;
+  inset: 0;
+}
+
+.puzzle-popup-content p {
+  position: absolute;
+  top: 1.6667vw;
+  left: 0.8vw;
+  width: 8.3333vw;
+  margin: 0;
+  color: #252525;
+  font-family: "Coolvetica", Arial, sans-serif;
+  font-size: 1.3vw;
+  line-height: 1;
+}
+
+.puzzle-popup-content span {
+  position: absolute;
+  right: 0.5556vw;
+  bottom: 0.5556vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.5556vw;
+  height: 2.0833vw;
+  background: #e17ef7;
+  color: #252525;
+  font-family: "Coolvetica", Arial, sans-serif;
+  font-size: 0.9722vw;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.puzzle-title {
+  position: absolute;
+  top: 12vw;
+  left: 5vw;
+  width: 52vw;
+  margin: 0;
+  color: #fbfbfb;
+  font-family: "Coolvetica", Arial, sans-serif;
+  font-size: 5.5556vw;
+  line-height: 0.95;
+  text-transform: uppercase;
+  z-index: 3;
+}
+
+.puzzle-main {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+}
+
+.puzzle-board {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* центральная основа */
+.puzzle-substrate {
+  position: absolute;
+  left: 27.7083vw;
+  bottom: 12.2917vw;
+  width: 44.4444vw;
+  height: 50vw;
+  object-fit: contain;
+  z-index: 1;
+}
+
+/* зоны вставки */
+.drop-zone {
+  position: absolute;
+  z-index: 2;
+}
+
+.drop-zone.is-hovered {
+  outline: 0.2vw dashed rgba(255, 255, 255, 0.75);
+  outline-offset: 0.15vw;
+}
+
+.drop-zone.is-filled {
+  outline: none;
+}
+
+.drop-vr-left {
+  left: 28.2vw;
+  bottom: 13.2vw;
+  width: 26vw;
+  height: 20vw;
+}
+
+.drop-vrpad-left {
+  right: 25vw;
+  bottom: 12.8vw;
+  width: 13vw;
+  height: 18vw;
+}
+
+.drop-gamepad-left {
+  left: 29vw;
+  top: 29vw;
+  width: 18vw;
+  height: 16vw;
+}
+
+.drop-vrpad-right {
+  right: 39.8vw;
+  bottom: 28.6vw;
+  width: 20vw;
+  height: 22vw;
+}
+
+.drop-gamepad-right {
+  right: 23.35vw;
+  bottom: 27.6vw;
+  width: 20.3vw;
+  height: 17.3vw;
+}
+
+.drop-vr-right {
+  right: 25.52vw;
+  top: 31vw;
+  width: 19vw;
+  height: 17vw;
+}
+
+/* перетаскиваемые детали */
+.puzzle-piece {
+  position: absolute;
+  border: none;
+  background: transparent;
+  cursor: grab;
+  z-index: 4;
+  transition:
+    left 0.35s ease,
+    top 0.35s ease,
+    right 0.35s ease,
+    bottom 0.35s ease,
+    transform 0.35s ease,
+    opacity 0.2s ease;
+}
+
+.puzzle-piece img,
+.puzzle-piece {
+  display: block;
+}
+
+.puzzle-piece img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.puzzle-piece.is-dragging {
+  opacity: 0.92;
+  cursor: grabbing;
+  z-index: 10;
+}
+
+.puzzle-piece.is-placed {
+  cursor: default;
+  z-index: 5;
+}
+
+.puzzle-piece.is-wrong {
+  transform: scale(1.05);
+}
+
+/* стартовые позиции деталей */
+.piece-vr-left {
+  width: 23vw;
+  height: 19vw;
+  left: 3.96vw;
+  bottom: 46.9vw;
+}
+
+.piece-vrpad-left {
+  width: 12vw;
+  height: 18vw;
+  left: 7.78vw;
+  bottom: 31vw;
+}
+
+.piece-gamepad-left {
+  width: 16vw;
+  height: 17vw;
+  left: 8.82vw;
+  bottom: 15vw;
+}
+
+.piece-vrpad-right {
+  width: 19.56vw;
+  height: 22.97vw;
+  right: 1.5vw;
+  bottom: 44.61vw;
+}
+
+.piece-gamepad-right {
+  width: 19vw;
+  height: 17vw;
+  right: 3vw;
+  bottom: 28vw;
+}
+
+.piece-vr-right {
+  width: 21vw;
+  height: 17vw;
+  right: 2vw;
+  bottom: 13vw;
+}
+
+.puzzle-board.is-complete .puzzle-substrate {
+  filter: drop-shadow(0 0 1vw rgba(255, 255, 255, 0.18));
+}
+
+.cassettes {
+  position: relative;
+  width: 100vw;
+  padding-top: 9.0278vw;
+}
+
+.cassettes-container {
+  position: relative;
+  width: 94.4444vw;
+  height: 66.5278vw;
+  margin: 0 2.7778vw;
+}
+
+.cassettes-section-background {
+  position: absolute;
+  inset: 0;
+  width: 94.4444vw;
+  height: 66.5278vw;
+  object-fit: contain;
+  z-index: 0;
+}
+
+.cassettes-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+.cassettes-title {
+  position: absolute;
+  top: 10vw;
+  left: 6vw;
+  width: 66vw;
+  margin: 0;
+  color: #fbfbfb;
+  font-family: "Coolvetica", Arial, sans-serif;
+  font-size: 5.5556vw;
+  line-height: 0.95;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+/* попапы не должны перекрывать клики по слайдеру */
+.cassettes-popups {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.cassettes-popup {
+  position: absolute;
+  z-index: 21;
+  pointer-events: auto;
+}
+
+.cassettes-popup img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cassettes-popup-content {
+  position: absolute;
+  inset: 0;
+}
+
+.cassettes-popup-content p {
+  position: absolute;
+  margin: 0;
+  color: #252525;
+  font-family: "Coolvetica", Arial, sans-serif;
+  line-height: 1;
+}
+
+.cassettes-popup-content span {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #252525;
+  font-family: "Coolvetica", Arial, sans-serif;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.cassettes-popup-three {
+  top: 16vw;
+  left: 8vw;
+  width: 12.7778vw;
+  height: 8.2639vw;
+}
+
+.cassettes-popup-three .cassettes-popup-content p {
+  top: 1.25vw;
+  left: 0.4861vw;
+  width: 9.7222vw;
+  font-size: 1.3889vw;
+}
+
+.cassettes-popup-three .cassettes-popup-content span {
+  right: 0.5556vw;
+  bottom: 0.5556vw;
+  width: 5.5556vw;
+  height: 2.0833vw;
+  background: #c98aff;
+  font-size: 0.9722vw;
+}
+
+.cassettes-popup-four {
+  top: 10vw;
+  right: 40vw;
+  width: 12.7778vw;
+  height: 8.2639vw;
+}
+
+.cassettes-popup-four .cassettes-popup-content p {
+  top: 1.6667vw;
+  left: 0.625vw;
+  width: 8.3333vw;
+  font-size: 1.6667vw;
+}
+
+.cassettes-popup-four .cassettes-popup-content span {
+  right: 0.5556vw;
+  bottom: 0.5556vw;
+  width: 5.5556vw;
+  height: 2.0833vw;
+  background: #e17ef7;
+  font-size: 0.9722vw;
+}
+
+.cassettes-layout {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+}
+
+/* левый блок со слайдером */
+.cassettes-slider-block {
+  position: absolute;
+  left: 3.8vw;
+  top: 30vw;
+  width: 35.5vw;
+  height: 28vw;
+  z-index: 31;
+}
+
+.cassettes-swiper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.cassettes-swiper .swiper-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.cassettes-swiper .swiper-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cassette-button {
+  display: block;
+  width: 27vw;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.cassette-button img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.cassette-button.is-disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.cassette-button.is-playing {
+  transform: scale(1.03);
+}
+
+/* стрелки */
+.cassettes-arrow {
+  position: absolute;
+  top: 50%;
+  width: 4.6vw;
+  height: 4.6vw;
+  padding: 0;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 40;
+}
+
+.cassettes-arrow img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cassettes-arrow-prev {
+  left: -2.2vw;
+}
+
+.cassettes-arrow-next {
+  right: -2.2vw;
+}
+
+.cassettes-arrow.is-disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* правый инфоблок */
+.cassette-info-block {
+  position: absolute;
+  top: 29vw;
+  right: 4.3056vw;
+  width: 37.6389vw;
+  height: 30.2778vw;
+  margin: 0;
+  z-index: 31;
+}
+
+.cassette-info-background {
+  position: absolute;
+  inset: 0;
+  width: 37.6389vw;
+  height: 30.2778vw;
+  object-fit: contain;
+  z-index: 0;
+}
+
+.cassette-info-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: 2vw 2.5vw 2.7778vw;
+}
+
+.cassette-info-title {
+  margin: 0 0 3vw;
+  color: #f6f6f6;
+  font-family: "Coolvetica", Arial, sans-serif;
+  font-size: 3.1944vw;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.cassette-info-text {
+  width: 31.25vw;
+  margin: 0;
+  color: #252525;
+  font-family: "Coolvetica", Arial, sans-serif;
+  font-size: 2.0833vw;
+  line-height: 1.05;
+}
+
+.cassette-info-button {
+  position: absolute;
+  left: 2.5vw;
+  bottom: 2.7778vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15.8333vw;
+  height: 4.4444vw;
+  padding: 0;
+  border: none;
+  background: #9f48ea;
+  color: #fbfbfb;
+  font-family: "Coolvetica", Arial, sans-serif;
+  font-size: 2.5vw;
+  line-height: 1;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.cassette-info-button.is-selected {
+  background: #e17ef7;
+}
+
+.draw {
+  position: relative;
+  width: 100vw;
+  padding-top: 9.7222vw;
+}
+
+.draw-container {
+  position: relative;
+  width: 94.4444vw;
+  height: 94.7917vw;
+  margin: 0 2.7778vw;
+}
+
+.draw-section-background {
+  position: absolute;
+  inset: 0;
+  width: 94.4444vw;
+  height: 94.7917vw;
+  object-fit: contain;
+  z-index: 0;
+}
+
+.draw-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.draw-title {
+  position: absolute;
+  top: 12vw;
+  left: 6vw;
+  width: 72vw;
+  margin: 0;
+  color: #fbfbfb;
+  font-family: "Coolvetica", Arial, sans-serif;
+  font-size: 5.5556vw;
+  line-height: 0.95;
+  text-transform: uppercase;
+  z-index: 3;
+}
+
+.draw-popup {
+  position: absolute;
+  top: 10vw;
+  left: 65vw;
+  width: 11.3194vw;
+  height: 12.2222vw;
+  z-index: 5;
+}
+
+.draw-popup img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.draw-popup-content {
+  position: absolute;
+  inset: 0;
+}
+
+.draw-popup-content p {
+  position: absolute;
+  top: 2.2222vw;
+  left: 0.6944vw;
+  width: 8.3333vw;
+  margin: 0;
+  color: #252525;
+  font-family: "Coolvetica", Arial, sans-serif;
+  font-size: 1.3889vw;
+  line-height: 1;
+}
+
+.draw-popup-content span {
+  position: absolute;
+  right: 0.5556vw;
+  bottom: 0.625vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.5556vw;
+  height: 2.0833vw;
+  background: #fadba7;
+  color: #252525;
+  font-family: "Coolvetica", Arial, sans-serif;
+  font-size: 1.1111vw;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.draw-board {
+  position: absolute;
+  left: 50%;
+  bottom: 12vw;
+  width: 76.3889vw;
+  height: 52.7778vw;
+  transform: translateX(-50%);
+  z-index: 4;
+}
+
+.draw-board-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.draw-board-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.draw-canvas {
+  position: absolute;
+  top: 2.2222vw;
+  left: 4.8611vw;
+  width: 66.5972vw;
+  height: 41.1806vw;
+  display: block;
+  background: transparent;
+  cursor: crosshair;
+  z-index: 3;
+  touch-action: none;
+}
+
+.palette {
+  position: absolute;
+  left: 14vw;
+  bottom: 4vw;
+  display: flex;
+  align-items: center;
+  gap: 0.8333vw;
+  z-index: 3;
+}
+
+.palette__color {
+  width: 2.7778vw;
+  height: 2.7778vw;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.palette__color--one {
+  background: #222222;
+}
+
+.palette__color--two {
+  background: #be71ff;
+}
+
+.palette__color--three {
+  background: #e988ff;
+}
+
+.palette__color--four {
+  background: #81b1f8;
+}
+
+.palette__color--five {
+  background: #fadba7;
+}
+
+.palette__color--six {
+  background: #ffad7e;
+}
+
+.palette__color.is-active {
+  box-shadow: 0 0 0 0.2778vw #fbfbfb;
+}
+
+.footer {
+  position: relative;
+  width: 100vw;
+  padding-top: 8.3333vw;
+}
+
+.footer-container {
+  position: relative;
+  width: 100vw;
+  height: 36.1111vw;
+  margin: 0 0 0 0;
+}
+
+.footer-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Большая нижняя папка */
+.footer-main-folder {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 30.8333vw;
+  object-fit: fill;
+  z-index: 6;
+}
+
+/* Декоративные фоновые папки */
+.footer-top-folders {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.footer-folder {
+  position: absolute;
+  display: block;
+  object-fit: contain;
+}
+
+.footer-folder-one {
+  top: 2vw;
+  left: -13vw;
+  width: 55.8333vw;
+  height: 23vw;
+  z-index: 1;
+}
+
+.footer-folder-two {
+  top: 1vw;
+  right: 22vw;
+  width: 55.8333vw;
+  height: 20.5556vw;
+  z-index: 1;
+}
+
+/* Интерактивные папки */
+.footer-info-folders {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+}
+
+.footer-info-folder {
+  position: absolute;
+  width: 55.8333vw;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.footer-info-folder img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.45s ease;
+}
+
+.footer-info-folder-author {
+  top: 0.2vw;
+  left: 0;
+  height: 20.5556vw;
+  z-index: 8;
+}
+
+.footer-info-folder-author img {
+  transform: translateY(6vw);
+}
+
+.footer-info-folder-author:hover img {
+  transform: translateY(0);
+}
+
+.footer-info-folder-teachers {
+  top: 0vw;
+  left: 23.75vw;
+  height: 23vw;
+  z-index: 6;
+}
+
+.footer-info-folder-teachers img {
+  transform: translateY(0vw);
+}
+
+.footer-info-folder-teachers:hover img {
+  transform: translateY(0);
+}
+
+.footer-info-folder-education {
+  top: -2vw;
+  right: 2vw;
+  height: 25vw;
+  z-index: 5;
+}
+
+.footer-info-folder-education img {
+  transform: translateY(0vw);
+}
+
+.footer-info-folder-education:hover img {
+  transform: translateY(0);
 }

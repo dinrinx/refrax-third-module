@@ -395,3 +395,147 @@
     color: #ffffff;
   }
 }
+
+.card {
+  transition: transform 0.2s ease;
+}
+
+.card:hover:not(.matched) {
+  transform: translateY(-0.25vw);
+}
+
+.card:active:not(.matched) {
+  transform: translateY(0);
+}
+
+@keyframes puzzle-bounce-back {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.cassettes-popup-three {
+  animation: cassettesPopupFloatOne 3.1s ease-in-out infinite;
+}
+
+.cassettes-popup-four {
+  animation: cassettesPopupFloatTwo 3.4s ease-in-out infinite;
+}
+
+.cassettes-swiper .swiper-slide-active .cassette-button {
+  animation: activeCassetteFloat 2.8s ease-in-out infinite;
+}
+
+.cassettes-arrow {
+  transition: transform 0.25s ease;
+}
+
+.cassettes-arrow:hover {
+  transform: translateY(-50%) scale(1.08);
+}
+
+@keyframes cassettesPopupFloatOne {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(-2deg);
+  }
+  50% {
+    transform: translate(0.9vw, -0.7vw) rotate(2deg);
+  }
+}
+
+@keyframes cassettesPopupFloatTwo {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(3deg);
+  }
+  50% {
+    transform: translate(-0.8vw, 0.8vw) rotate(-2deg);
+  }
+}
+
+@keyframes activeCassetteFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-0.9vw) rotate(2deg);
+  }
+}
+
+.draw-popup {
+  animation: drawPopupFloat 3.1s ease-in-out infinite;
+}
+
+.draw-board {
+  animation: drawBoardFloat 4.2s ease-in-out infinite;
+}
+
+@keyframes drawPopupFloat {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(-2deg);
+  }
+  50% {
+    transform: translate(-0.8vw, 0.7vw) rotate(2deg);
+  }
+}
+
+@keyframes drawBoardFloat {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-0.6vw);
+  }
+}
+
+.footer-main-folder {
+  animation: footerMainFloat 6s ease-in-out infinite;
+}
+
+.footer-folder-one {
+  animation: footerFloatOne 4.8s ease-in-out infinite;
+}
+
+.footer-folder-two {
+  animation: footerFloatTwo 5.1s ease-in-out infinite;
+}
+
+@keyframes footerMainFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.2778vw);
+  }
+}
+
+@keyframes footerFloatOne {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-0.4167vw) rotate(0.5deg);
+  }
+}
+
+@keyframes footerFloatTwo {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(0.3472vw) rotate(-0.5deg);
+  }
+}

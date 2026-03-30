@@ -1,173 +1,96 @@
-let firstCard = null;
-let secondCard = null;
-let lockBoard = false;
-let matchedPairs = 0;
+document.addEventListener("DOMContentLoaded", () => {
+  const cardsGrid = document.querySelector(".cards-grid");
 
-const container = document.querySelector(".cards-grid");
-const cards = () => Array.from(document.querySelectorAll(".card"));
-const timerElement = document.getElementById("timer");
-const gameSection = document.getElementById("cards_game");
+  if (!cardsGrid) return;
 
-let timeRemaining = 60;
-let timerInterval = null;
+  let firstCard = null;
+  let secondCard = null;
+  let lockBoard = false;
+  let matchedPairs = 0;
 
-function shuffleCards() {
-  if (!container) return;
+  const cards = () => Array.from(cardsGrid.querySelectorAll(".card"));
 
-  const shuffledCards = cards().sort(() => Math.random() - 0.5);
-  container.innerHTML = "";
-  shuffledCards.forEach((card) => container.appendChild(card));
-}
+  function shuffleCards() {
+    const shuffledCards = cards().sort(() => Math.random() - 0.5);
 
-function flipCard() {
-  if (lockBoard) return;
-  if (this === firstCard) return;
-  if (this.classList.contains("is-matched")) return;
-
-  this.classList.add("is-flipped");
-
-  if (!firstCard) {
-    firstCard = this;
-    return;
+    shuffledCards.forEach((card) => {
+      cardsGrid.appendChild(card);
+    });
   }
 
-  secondCard = this;
-  checkForMatch();
-}
-
-function checkForMatch() {
-  const isMatch = firstCard.dataset.character === secondCard.dataset.character;
-
-  if (isMatch) {
-    disableCards();
-  } else {
-    unflipCards();
+  function resetBoard() {
+    firstCard = null;
+    secondCard = null;
+    lockBoard = false;
   }
-}
 
-function disableCards() {
-  firstCard.classList.add("is-matched");
-  secondCard.classList.add("is-matched");
+  function unflipCards() {
+    lockBoard = true;
 
-  firstCard.removeEventListener("click", flipCard);
-  secondCard.removeEventListener("click", flipCard);
+    setTimeout(() => {
+      if (firstCard) firstCard.classList.remove("flipped");
+      if (secondCard) secondCard.classList.remove("flipped");
 
-  matchedPairs += 1;
-  onPairFound();
-  resetBoard();
-
-  if (matchedPairs === Math.floor(cards().length / 2)) {
-    endGame();
+      resetBoard();
+    }, 800);
   }
-}
 
-function unflipCards() {
-  lockBoard = true;
+  function disableCards() {
+    firstCard.classList.add("matched");
+    secondCard.classList.add("matched");
 
-  setTimeout(() => {
-    firstCard.classList.remove("is-flipped");
-    secondCard.classList.remove("is-flipped");
+    firstCard.removeEventListener("click", handleCardClick);
+    secondCard.removeEventListener("click", handleCardClick);
+
+    matchedPairs += 1;
     resetBoard();
-  }, 800);
-}
 
-function resetBoard() {
-  firstCard = null;
-  secondCard = null;
-  lockBoard = false;
-}
-
-function restartGame() {
-  matchedPairs = 0;
-  resetBoard();
-
-  if (timerElement) {
-    timeRemaining = 60;
-    timerElement.textContent = "01:00";
-    startTimer();
+    if (matchedPairs === cards().length / 2) {
+      console.log("Все пары найдены");
+    }
   }
 
-  shuffleCards();
+  function checkForMatch() {
+    if (!firstCard || !secondCard) return;
 
-  cards().forEach((card) => {
-    card.classList.remove("is-flipped", "is-matched");
-    card.removeEventListener("click", flipCard);
-    card.addEventListener("click", flipCard);
-  });
-}
+    const isMatch = firstCard.dataset.id === secondCard.dataset.id;
 
-function onPairFound() {
-  if (typeof confetti !== "function") return;
-  [0, 100, 200].forEach((delay) => {
-    setTimeout(shoot, delay);
-  });
-}
+    if (isMatch) {
+      disableCards();
+    } else {
+      unflipCards();
+    }
+  }
 
-const defaults = {
-  spread: 360,
-  ticks: 50,
-  gravity: 0,
-  decay: 0.94,
-  startVelocity: 30,
-  colors: ["FFE400", "FFBD00", "E89400", "FFCA6C", "FDFFB8"],
-};
+  function handleCardClick(event) {
+    const currentCard = event.currentTarget;
 
-function shoot() {
-  if (typeof confetti !== "function") return;
+    if (lockBoard) return;
+    if (currentCard === firstCard) return;
+    if (currentCard.classList.contains("matched")) return;
 
-  confetti({ ...defaults, particleCount: 40, scalar: 1.2, shapes: ["star"] });
-  confetti({
-    ...defaults,
-    particleCount: 10,
-    scalar: 0.75,
-    shapes: ["circle"],
-  });
-}
+    currentCard.classList.add("flipped");
 
-function startTimer() {
-  if (!timerElement) return;
-
-  clearInterval(timerInterval);
-
-  timerInterval = setInterval(() => {
-    if (timeRemaining <= 0) {
-      clearInterval(timerInterval);
-      alert("Время вышло! Попробуйте снова.");
-      restartGame();
+    if (!firstCard) {
+      firstCard = currentCard;
       return;
     }
 
-    timeRemaining -= 1;
-    timerElement.textContent = `${String(
-      Math.floor(timeRemaining / 60),
-    ).padStart(2, "0")}:${String(timeRemaining % 60).padStart(2, "0")}`;
-  }, 1000);
-}
-
-function endGame() {
-  clearInterval(timerInterval);
-
-  setTimeout(() => {
-    alert("Поздравляем! Вы нашли все пары!");
-  }, 400);
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  if (!container) return;
-
-  restartGame();
-
-  if (gameSection) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries.some((entry) => entry.isIntersecting) && timerElement) {
-          startTimer();
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.4 },
-    );
-
-    observer.observe(gameSection);
+    secondCard = currentCard;
+    checkForMatch();
   }
+
+  function startGame() {
+    matchedPairs = 0;
+    resetBoard();
+    shuffleCards();
+
+    cards().forEach((card) => {
+      card.classList.remove("flipped", "matched");
+      card.removeEventListener("click", handleCardClick);
+      card.addEventListener("click", handleCardClick);
+    });
+  }
+
+  startGame();
 });

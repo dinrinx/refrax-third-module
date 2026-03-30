@@ -20,11 +20,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="stylesheet/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <meta
       property="og:title"
       content="Учебный проект 'Интерактивный плакат REFRAX'"
@@ -36,6 +32,9 @@
     />
     <script src="js/second-screen.js" defer></script>
     <script src="js/cards.js" defer></script>
+    <script src="js/puzzle.js" defer></script>
+    <script src="js/cassettes.js" defer></script>
+    <script src="js/draw.js" defer></script>
   </head>
   <body>
     <div class="page">
@@ -180,124 +179,140 @@
           <h2 class="cards-title">Найди вторую половину злодея</h2>
 
           <div class="cards-grid">
-            <button class="card" type="button" data-character="rabbit">
-              <span class="card__inner">
-                <img
-                  class="card__face card__face--front"
-                  src="images/card-rabbit.svg"
-                  alt="Кролик"
-                />
-                <img
-                  class="card__face card__face--back"
-                  src="images/cards-back.svg"
-                  alt=""
-                />
-              </span>
+            <button
+              class="card"
+              type="button"
+              data-id="rabbit"
+              aria-label="Карточка"
+            >
+              <div
+                class="card-front"
+                style="background-image: url(&quot;images/cards-back.svg&quot;)"
+              ></div>
+              <div
+                class="card-back"
+                style="
+                  background-image: url(&quot;images/card-rabbit.svg&quot;);
+                "
+              ></div>
             </button>
 
-            <button class="card" type="button" data-character="hedgehog">
-              <span class="card__inner">
-                <img
-                  class="card__face card__face--front"
-                  src="images/card-hedgehog.svg"
-                  alt="Ёж"
-                />
-                <img
-                  class="card__face card__face--back"
-                  src="images/cards-back.svg"
-                  alt=""
-                />
-              </span>
+            <button
+              class="card"
+              type="button"
+              data-id="hedgehog"
+              aria-label="Карточка"
+            >
+              <div
+                class="card-front"
+                style="background-image: url(&quot;images/cards-back.svg&quot;)"
+              ></div>
+              <div
+                class="card-back"
+                style="
+                  background-image: url(&quot;images/card-hedgehog.svg&quot;);
+                "
+              ></div>
             </button>
 
-            <button class="card" type="button" data-character="rabbit">
-              <span class="card__inner">
-                <img
-                  class="card__face card__face--front"
-                  src="images/card-rabbit.svg"
-                  alt="Кролик"
-                />
-                <img
-                  class="card__face card__face--back"
-                  src="images/cards-back.svg"
-                  alt=""
-                />
-              </span>
+            <button
+              class="card"
+              type="button"
+              data-id="rabbit"
+              aria-label="Карточка"
+            >
+              <div
+                class="card-front"
+                style="background-image: url(&quot;images/cards-back.svg&quot;)"
+              ></div>
+              <div
+                class="card-back"
+                style="
+                  background-image: url(&quot;images/card-rabbit.svg&quot;);
+                "
+              ></div>
             </button>
 
-            <button class="card" type="button" data-character="goat">
-              <span class="card__inner">
-                <img
-                  class="card__face card__face--front"
-                  src="images/card-goat.svg"
-                  alt="Козел"
-                />
-                <img
-                  class="card__face card__face--back"
-                  src="images/cards-back.svg"
-                  alt=""
-                />
-              </span>
+            <button
+              class="card"
+              type="button"
+              data-id="goat"
+              aria-label="Карточка"
+            >
+              <div
+                class="card-front"
+                style="background-image: url(&quot;images/cards-back.svg&quot;)"
+              ></div>
+              <div
+                class="card-back"
+                style="background-image: url(&quot;images/card-goat.svg&quot;)"
+              ></div>
             </button>
 
-            <button class="card" type="button" data-character="ram">
-              <span class="card__inner">
-                <img
-                  class="card__face card__face--front"
-                  src="images/card-ram.svg"
-                  alt="Баран"
-                />
-                <img
-                  class="card__face card__face--back"
-                  src="images/cards-back.svg"
-                  alt=""
-                />
-              </span>
+            <button
+              class="card"
+              type="button"
+              data-id="ram"
+              aria-label="Карточка"
+            >
+              <div
+                class="card-front"
+                style="background-image: url(&quot;images/cards-back.svg&quot;)"
+              ></div>
+              <div
+                class="card-back"
+                style="background-image: url(&quot;images/card-ram.svg&quot;)"
+              ></div>
             </button>
 
-            <button class="card" type="button" data-character="goat">
-              <span class="card__inner">
-                <img
-                  class="card__face card__face--front"
-                  src="images/card-goat.svg"
-                  alt="Козел"
-                />
-                <img
-                  class="card__face card__face--back"
-                  src="images/cards-back.svg"
-                  alt=""
-                />
-              </span>
+            <button
+              class="card"
+              type="button"
+              data-id="goat"
+              aria-label="Карточка"
+            >
+              <div
+                class="card-front"
+                style="background-image: url(&quot;images/cards-back.svg&quot;)"
+              ></div>
+              <div
+                class="card-back"
+                style="background-image: url(&quot;images/card-goat.svg&quot;)"
+              ></div>
             </button>
 
-            <button class="card" type="button" data-character="hedgehog">
-              <span class="card__inner">
-                <img
-                  class="card__face card__face--front"
-                  src="images/card-hedgehog.svg"
-                  alt="Ёж"
-                />
-                <img
-                  class="card__face card__face--back"
-                  src="images/cards-back.svg"
-                  alt=""
-                />
-              </span>
+            <button
+              class="card"
+              type="button"
+              data-id="hedgehog"
+              aria-label="Карточка"
+            >
+              <div
+                class="card-front"
+                style="background-image: url(&quot;images/cards-back.svg&quot;)"
+              ></div>
+              <div
+                class="card-back"
+                style="
+                  background-image: url(&quot;images/card-hedgehog.svg&quot;);
+                "
+              ></div>
             </button>
 
-            <button class="card" type="button" data-character="ram">
-              <span class="card__inner">
-                <img
-                  class="card__face card__face--front"
-                  src="images/card-ram.svg"
-                  alt="Баран"
-                />
-                <img
-                  class="card__face card__face--back"
-                  src="images/cards-back.svg"
-                  alt=""
-                />
-              </span>
+            <button
+              class="card"
+              type="button"
+              data-id="ram"
+              aria-label="Карточка"
+            >
+              <div
+                class="card-front"
+                style="background-image: url(&quot;images/cards-back.svg&quot;)"
+              ></div>
+              <div
+                class="card-back"
+                style="background-image: url(&quot;images/card-ram.svg&quot;)"
+              ></div>
             </button>
           </div>
         </div>
@@ -313,10 +328,6 @@
         />
 
         <div class="puzzle-content">
-          <div class="puzzle-window-label">
-            <p>События</p>
-          </div>
-
           <div class="puzzle-popup">
             <img src="images/background-window-four.svg" alt="" />
             <div class="puzzle-popup-content">
@@ -327,49 +338,75 @@
 
           <h2 class="puzzle-title">СОБЕРИ ВСЮ КАРТИНУ СОБЫТИЙ</h2>
 
-          <div class="puzzle-layout">
-            <div class="puzzle-left-column">
+          <div class="puzzle-main">
+            <div class="puzzle-board">
               <img
-                class="puzzle-image vr-left"
-                src="images/vr-left.svg"
-                alt=""
-              />
-              <img
-                class="puzzle-image vrpad-left"
-                src="images/vrpad-left.svg"
-                alt=""
-              />
-              <img
-                class="puzzle-image gamepad-left"
-                src="images/gamepad-left.svg"
-                alt=""
-              />
-            </div>
-
-            <div class="puzzle-center">
-              <img
-                class="puzzle-substrate"
                 src="images/puzzle-substrate.svg"
+                class="puzzle-substrate"
                 alt="Основа пазла"
               />
-            </div>
 
-            <div class="puzzle-right-column">
               <img
-                class="puzzle-image vrpad-right"
+                src="images/vr-left.svg"
+                class="puzzle-piece piece-vr-left"
+                data-piece="vr-left"
+                draggable="true"
+                alt=""
+              />
+              <img
+                src="images/vrpad-left.svg"
+                class="puzzle-piece piece-vrpad-left"
+                data-piece="vrpad-left"
+                draggable="true"
+                alt=""
+              />
+              <img
+                src="images/gamepad-left.svg"
+                class="puzzle-piece piece-gamepad-left"
+                data-piece="gamepad-left"
+                draggable="true"
+                alt=""
+              />
+              <img
                 src="images/vrpad-right.svg"
+                class="puzzle-piece piece-vrpad-right"
+                data-piece="vrpad-right"
+                draggable="true"
                 alt=""
               />
               <img
-                class="puzzle-image gamepad-right"
                 src="images/gamepad-right.svg"
+                class="puzzle-piece piece-gamepad-right"
+                data-piece="gamepad-right"
+                draggable="true"
                 alt=""
               />
               <img
-                class="puzzle-image vr-right"
                 src="images/vr-right.svg"
+                class="puzzle-piece piece-vr-right"
+                data-piece="vr-right"
+                draggable="true"
                 alt=""
               />
+
+              <div class="drop-zone drop-vr-left" data-accept="vr-left"></div>
+              <div
+                class="drop-zone drop-vrpad-left"
+                data-accept="vrpad-left"
+              ></div>
+              <div
+                class="drop-zone drop-gamepad-left"
+                data-accept="gamepad-left"
+              ></div>
+              <div
+                class="drop-zone drop-vrpad-right"
+                data-accept="vrpad-right"
+              ></div>
+              <div
+                class="drop-zone drop-gamepad-right"
+                data-accept="gamepad-right"
+              ></div>
+              <div class="drop-zone drop-vr-right" data-accept="vr-right"></div>
             </div>
           </div>
         </div>
@@ -378,6 +415,8 @@
 
     <section class="cassettes">
       <div class="cassettes-container">
+        <h2 class="cassettes-title">Какая мелодия злорадствует внутри?</h2>
+
         <img
           class="cassettes-section-background"
           src="images/cassettes-section-background.svg"
@@ -405,22 +444,30 @@
 
           <div class="cassettes-layout">
             <div class="cassettes-slider-block">
-              <div class="swiper cassettes-swiper">
+              <button
+                class="cassettes-arrow cassettes-arrow-prev"
+                type="button"
+                aria-label="Предыдущая кассета"
+              >
+                <img src="images/arrow-left.svg" alt="" />
+              </button>
+
+              <div class="cassettes-swiper">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
                     <button
                       class="cassette-button"
                       type="button"
                       data-id="1"
-                      data-title="Пение урсулы"
+                      data-title="ПЕНИЕ УРСУЛЫ"
                       data-text="Песня о сделке, в которой свобода обменивается на иллюзию мечты. Урсула превращает желание быть услышанной в инструмент контроля."
                       data-audio="audio/cassette-one.mp3"
                       data-background="images/music-back-one.svg"
-                      aria-label="Включить кассету Пение урсулы"
+                      aria-label="Включить кассету Пение Урсулы"
                     >
                       <img
                         src="images/cassettes-one.svg"
-                        alt="Кассета Пение урсулы"
+                        alt="Кассета Пение Урсулы"
                       />
                     </button>
                   </div>
@@ -430,15 +477,15 @@
                       class="cassette-button"
                       type="button"
                       data-id="2"
-                      data-title="Матушка готель"
+                      data-title="МАТУШКА ГОТЕЛЬ"
                       data-text="Голос заботы звучит как система ограничения. Под видом любви Готель внушает страх перед миром."
                       data-audio="audio/cassette-two.mp3"
                       data-background="images/music-back-two.svg"
-                      aria-label="Включить кассету Матушка готель"
+                      aria-label="Включить кассету Матушка Готель"
                     >
                       <img
                         src="images/cassettes-two.svg"
-                        alt="Кассета Матушка готель"
+                        alt="Кассета Матушка Готель"
                       />
                     </button>
                   </div>
@@ -448,38 +495,28 @@
                       class="cassette-button"
                       type="button"
                       data-id="3"
-                      data-title="Гастон и чудовище"
+                      data-title="ГАСТОН И ЧУДОВИЩЕ"
                       data-text="Самовлюблённый гимн силе и одобрению толпы. Песня превращает эго в спектакль, где уверенность звучит громче, чем правда."
                       data-audio="audio/cassette-three.mp3"
                       data-background="images/music-back-three.svg"
-                      aria-label="Включить кассету Гастон и чудовище"
+                      aria-label="Включить кассету Гастон и Чудовище"
                     >
                       <img
                         src="images/cassettes-three.svg"
-                        alt="Кассета Гастон и чудовище"
+                        alt="Кассета Гастон и Чудовище"
                       />
                     </button>
                   </div>
                 </div>
               </div>
 
-              <div class="cassettes-navigation">
-                <button
-                  class="cassettes-arrow cassettes-arrow-prev"
-                  type="button"
-                  aria-label="Предыдущая кассета"
-                >
-                  <img src="images/arrow-left.svg" alt="" />
-                </button>
-
-                <button
-                  class="cassettes-arrow cassettes-arrow-next"
-                  type="button"
-                  aria-label="Следующая кассета"
-                >
-                  <img src="images/arrow-right.svg" alt="" />
-                </button>
-              </div>
+              <button
+                class="cassettes-arrow cassettes-arrow-next"
+                type="button"
+                aria-label="Следующая кассета"
+              >
+                <img src="images/arrow-right.svg" alt="" />
+              </button>
             </div>
 
             <aside class="cassette-info-block" aria-live="polite">
@@ -490,7 +527,7 @@
               />
 
               <div class="cassette-info-content">
-                <h3 class="cassette-info-title">Пение урсулы</h3>
+                <h3 class="cassette-info-title">ПЕНИЕ УРСУЛЫ</h3>
                 <p class="cassette-info-text">
                   Песня о сделке, в которой свобода обменивается на иллюзию
                   мечты. Урсула превращает желание быть услышанной в инструмент
@@ -536,8 +573,6 @@
               <canvas
                 class="draw-canvas"
                 id="drawCanvas"
-                width="1000"
-                height="600"
                 aria-label="Поле для рисования"
               ></canvas>
 
@@ -545,50 +580,38 @@
                 <button
                   class="palette__color palette__color--one"
                   type="button"
-                  data-color="#ffffff"
-                  aria-label="Белый"
+                  data-color="#222222"
+                  aria-label="Черный"
                 ></button>
                 <button
                   class="palette__color palette__color--two"
                   type="button"
-                  data-color="#a855f7"
+                  data-color="#be71ff"
                   aria-label="Фиолетовый"
                 ></button>
                 <button
                   class="palette__color palette__color--three"
                   type="button"
-                  data-color="#ec4899"
+                  data-color="#e988ff"
                   aria-label="Розовый"
                 ></button>
                 <button
                   class="palette__color palette__color--four"
                   type="button"
-                  data-color="#60a5fa"
+                  data-color="#81b1f8"
                   aria-label="Голубой"
                 ></button>
                 <button
                   class="palette__color palette__color--five"
                   type="button"
-                  data-color="#facc15"
+                  data-color="#fadba7"
                   aria-label="Желтый"
                 ></button>
                 <button
                   class="palette__color palette__color--six"
                   type="button"
-                  data-color="#1f1f1f"
-                  aria-label="Черный"
-                ></button>
-                <button
-                  class="palette__color palette__color--seven"
-                  type="button"
-                  data-color="#f97316"
+                  data-color="#ffad7e"
                   aria-label="Оранжевый"
-                ></button>
-                <button
-                  class="palette__color palette__color--eight"
-                  type="button"
-                  data-color="#22c55e"
-                  aria-label="Зеленый"
                 ></button>
               </div>
             </div>
