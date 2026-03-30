@@ -1,6 +1,4 @@
 @font-face {
   font-family: "Coolvetica";
-  src: url("..fonts/coolvetica.woff") format("woff");
-  font-style: normal;
-  font-display: swap;
+  src: url(".../fonts/coolvetica-rg.ttf");
 }
