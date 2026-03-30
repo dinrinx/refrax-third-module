@@ -12,6 +12,7 @@ body {
   background-repeat: repeat-y;
   background-position: top center;
   background-size: 100vw auto;
+  font-family: "coolvetica", Arial, sans-serif;
 }
 
 * {
