@@ -1,4 +1,4 @@
 @font-face {
   font-family: "сoolvetica";
-  src: url(".../fonts/coolvetica-rg.ttf");
+  src: url(".../fonts/coolvetica-rg.ttf") format("truetype");
 }
